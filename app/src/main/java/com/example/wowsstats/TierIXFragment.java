@@ -96,7 +96,7 @@ public class TierIXFragment extends Fragment {
             shipName = convertView.findViewById(R.id.textView_itemship_name);
 
 
-            int resourceImage = getResources().getIdentifier(shipList.get(position).getName(), "drawable", getActivity().getPackageName());
+            int resourceImage = getResources().getIdentifier(shipList.get(position).getName().toLowerCase(), "drawable", getActivity().getPackageName());
             imageView.setImageDrawable(getActivity().getResources().getDrawable(resourceImage));
 
             shipName.setText(shipList.get(position).getName() + "");
