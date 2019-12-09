@@ -1,5 +1,9 @@
 package com.example.wowsstats;
 
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 public class Ship implements Parcelable {
