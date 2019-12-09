@@ -98,8 +98,17 @@ public class Ship {
 
 
         }
+
         return sort;
     }
 
 
+    @Override
+    public String toString() {
+        return "Ship{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", tier='" + tier + '\'' +
+                '}';
+    }
 }
