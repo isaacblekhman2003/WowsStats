@@ -209,6 +209,8 @@ public class TierIXFragment extends Fragment {
 
                 startActivity(targetIntent);
 
+
+
             }
         });
     }
