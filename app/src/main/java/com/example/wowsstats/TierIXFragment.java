@@ -3,6 +3,9 @@ package com.example.wowsstats;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -20,6 +23,7 @@ import com.google.gson.Gson;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -58,6 +62,75 @@ public class TierIXFragment extends Fragment {
 
 
         return rootView;
+    }
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.main, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_shipdd_sort:
+                List<Ship> sort;
+                sort = new ArrayList<>();
+                for (int i = 0; i < ships.length; i++) {
+                    if (ships[i].getType().equals("Destroyer")) {
+                        sort.add(ships[i]);
+                    }
+                }
+
+                shipArrayAdapter = new ShipAdapter(sort);
+                shipView.setAdapter(shipArrayAdapter);
+                shipArrayAdapter.notifyDataSetChanged();
+
+                return true;
+            case R.id.action_shipca_sort: {
+
+                List<Ship> sortca;
+                sortca = new ArrayList<>();
+                for (int i = 0; i < ships.length; i++) {
+                    if (ships[i].getType().equals("Cruiser")) {
+                        sortca.add(ships[i]);
+                    }
+                }
+
+                shipArrayAdapter = new ShipAdapter(sortca);
+                shipView.setAdapter(shipArrayAdapter);
+                shipArrayAdapter.notifyDataSetChanged();
+
+
+                return true;
+            }
+            case R.id.action_shipbb_sort: {
+
+                List<Ship> sortbb;
+                sortbb = new ArrayList<>();
+                for (int i = 0; i < ships.length; i++) {
+                    if (ships[i].getType().equals("Battleship")) {
+                        sortbb.add(ships[i]);
+                    }
+                }
+
+                shipArrayAdapter = new ShipAdapter(sortbb);
+                shipView.setAdapter(shipArrayAdapter);
+                shipArrayAdapter.notifyDataSetChanged();
+
+            }
+
+            default:
+                return super.onOptionsItemSelected(item);}
+
+
+
     }
 
     private void wirewidgets(View rootView) {

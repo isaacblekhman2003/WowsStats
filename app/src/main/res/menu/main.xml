@@ -10,10 +10,11 @@
         android:orderInCategory="102"
         android:title="Cruiser" />
     <item
+        android:id="@+id/action_shipbb_sort"
         android:orderInCategory="103"
         android:title="Battleship" />
     <item
-        android:id="@+id/action_shipcv_sort"
+        android:id="@+id/action_shipall_sort"
         android:orderInCategory="104"
-        android:title="Cancer" />
+        android:title="All ships" />
 </menu>
