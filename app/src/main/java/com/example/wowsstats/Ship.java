@@ -1,8 +1,11 @@
 package com.example.wowsstats;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
-public class Ship {
+public class Ship implements Parcelable {
 
 
     public String getName() {
@@ -102,4 +105,48 @@ public class Ship {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.name);
+        dest.writeString(this.nation);
+        dest.writeString(this.type);
+        dest.writeString(this.gun);
+        dest.writeString(this.speed);
+        dest.writeString(this.hp);
+        dest.writeString(this.concealment);
+        dest.writeString(this.torpedo);
+        dest.writeString(this.tier);
+    }
+
+    public Ship() {
+    }
+
+    protected Ship(Parcel in) {
+        this.name = in.readString();
+        this.nation = in.readString();
+        this.type = in.readString();
+        this.gun = in.readString();
+        this.speed = in.readString();
+        this.hp = in.readString();
+        this.concealment = in.readString();
+        this.torpedo = in.readString();
+        this.tier = in.readString();
+    }
+
+    public static final Parcelable.Creator<Ship> CREATOR = new Parcelable.Creator<Ship>() {
+        @Override
+        public Ship createFromParcel(Parcel source) {
+            return new Ship(source);
+        }
+
+        @Override
+        public Ship[] newArray(int size) {
+            return new Ship[size];
+        }
+    };
 }

@@ -1,10 +1,12 @@
 package com.example.wowsstats;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -30,6 +32,8 @@ public class TierXFragment extends Fragment {
     private Ship[] ships;
     private List<Ship> shipList;
     private ListView shipView;
+
+    public static final String EXTRA_SHIP = "ship";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,6 +53,7 @@ public class TierXFragment extends Fragment {
 
         shipView.setAdapter(shipArrayAdapter);
 
+        setListeners();
 
 
 
@@ -137,4 +142,26 @@ public class ShipAdapter extends ArrayAdapter<Ship>{
 
 
     }
-}}
+
+}
+    public void setListeners()
+    {
+        shipView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l)
+            {
+
+                Ship ship = shipList.get(position);
+
+                Intent targetIntent = new Intent(getContext(), DetailActivity.class);
+
+                targetIntent.putExtra(EXTRA_SHIP, ship);
+
+                startActivity(targetIntent);
+
+            }
+        });
+    }
+
+
+}
