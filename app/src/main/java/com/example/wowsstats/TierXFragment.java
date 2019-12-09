@@ -1,12 +1,14 @@
 package com.example.wowsstats;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,9 +16,11 @@ import androidx.fragment.app.Fragment;
 
 import com.google.gson.Gson;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class TierXFragment extends Fragment {
@@ -24,37 +28,26 @@ public class TierXFragment extends Fragment {
     private ArrayAdapter<Ship> shipArrayAdapter;
     private Gson gson;
     private Ship[] ships;
-    private List<Ship> shiplist;
+    private List<Ship> shipList;
+    private ListView shipView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_tier_x,container,false);
+
         gson = new Gson();
-        InputStream jsonFileInputStream   = getResources().openRawResource(R.raw.shipsX);
+        InputStream jsonFileInputStream   = getResources().openRawResource(R.raw.shipsx);
         String json = readTextFile(jsonFileInputStream);
+
 
         ships =  gson.fromJson(json, Ship[].class);
 
-        shiplist = Arrays.asList(ships);
+        shipList = Arrays.asList(ships);
 
-        shipArrayAdapter = new HeroAdapter(heroList);
-        wirewidgets();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        heroview.setAdapter(heroesArrayAdapter);
+        shipArrayAdapter = new ShipAdapter(shipList);
+        wirewidgets(rootView);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        shipView.setAdapter(shipArrayAdapter);
 
 
 
@@ -63,4 +56,85 @@ public class TierXFragment extends Fragment {
 
         return rootView;
     }
-}
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_shipdd_sort:
+                Arrays.sort(ships);
+                shipArrayAdapter.notifyDataSetChanged();
+                return true;
+            case R.id.action_shipca_sort:{
+
+                //heroesArrayAdapter.notifyDataSetChanged();
+               // return true;
+
+            }
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
+    private void wirewidgets(View rootView) {
+        shipView = rootView.findViewById(R.id.ListView_tXfrag_shipList);
+
+    }
+
+    public String readTextFile (InputStream jsonFileInputStream) {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+        byte buf[] = new byte[1024];
+        int len;
+        try {
+            while ((len = jsonFileInputStream.read(buf)) != -1) {
+                outputStream.write(buf, 0, len);
+            }
+            outputStream.close();
+            jsonFileInputStream.close();
+        } catch (IOException e) {
+
+        }
+        return outputStream.toString();
+    }
+
+
+
+public class ShipAdapter extends ArrayAdapter<Ship>{
+    private ImageView imageView;
+    private  TextView shipName;
+
+
+    private List<Ship> shipList;
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        LayoutInflater inflater = getLayoutInflater();
+        if (convertView == null) {
+            convertView = inflater.inflate(R.layout.item_ship,parent,false);
+        }
+        imageView = convertView.findViewById(R.id.imageView_itemship_shipimage);
+        shipName = convertView.findViewById(R.id.textView_itemship_name);
+
+
+        int resourceImage = getResources().getIdentifier(shipList.get(position).getName().toLowerCase(), "drawable", getActivity().getPackageName());
+        imageView.setImageDrawable(getActivity().getResources().getDrawable(resourceImage));
+
+        shipName.setText(shipList.get(position).getName() + "");
+
+        return convertView;
+
+
+    }
+
+
+    public ShipAdapter(List<Ship> heroList) {
+        super(getActivity(), -1, heroList);
+        this.shipList=heroList;
+
+
+
+    }
+}}

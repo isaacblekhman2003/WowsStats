@@ -1,6 +1,6 @@
 [
   {
-    "name":"Yamato",
+    "name":"YAMATO",
     "nation":"Empire of Japan",
     "type":"Battleship",
     "gun": "46 cm/45 Type 94(3 * 3)",
@@ -12,7 +12,7 @@
 
   },
   {
-    "name":"Montana",
+    "name":"MONTANA",
     "nation":"United States of America",
     "type":"Battleship",
     "gun":"16-inch/50 caliber Mark 7(4 * 3)",
@@ -24,7 +24,7 @@
 
   },
   {
-    "name":"Zao",
+    "name":"ZAO",
     "nation":"Empire of Japan",
     "type":"Cruiser",
     "gun":"203 mm/50 18th Year Type(4 * 3)",
@@ -36,7 +36,7 @@
 
   },
   {
-    "name":"Des Moines",
+    "name":"DESMOINES",
     "nation":"United States of America",
     "type":"Cruiser",
     "gun":"203 mm/55 Mk16(3 * 3)",
@@ -48,7 +48,7 @@
 
   },
   {
-    "name":"Worcester",
+    "name":"WORCESTER",
     "nation":"United States of America",
     "type":"Cruiser",
     "gun":"152 mm/47 Mk 16(6 * 2)",
@@ -60,7 +60,7 @@
 
   },
   {
-    "name":"Gearing",
+    "name":"GEARING",
     "nation":"United States of America",
     "type":"Destroyer",
     "gun":"127 mm/38 Mk38 mod.0(3 * 2)",
@@ -72,7 +72,7 @@
 
   },
   {
-    "name":"Shimakaze",
+    "name":"SHIMAKAZE",
     "nation":"Empire of Japan",
     "type":"Destroyer",
     "gun":"127 mm/50 3rd Year Type mod.D(3 * 2)",
@@ -84,7 +84,7 @@
 
   },
   {
-    "name":"Harugumo",
+    "name":"HARUGUMO",
     "nation":"Empire of Japan",
     "type":"Destroyer",
     "gun":"100 mm/65 Type 98(5 * 2)",

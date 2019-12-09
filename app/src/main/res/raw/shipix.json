@@ -1,6 +1,6 @@
 [
   {
-    "name":"Izumo",
+    "name":"IZUMO",
     "nation":"Empire of Japan",
     "type":"Battleship",
     "gun": "410 mm/50 10th Year Type(3 * 3)",
@@ -8,11 +8,11 @@
     "hp":"76500",
     "concealment": "17.19 kilometer",
     "torpedo": "None",
-    "tier":"IX"
+    "tier":"ix"
 
   },
   {
-    "name":"Iowa",
+    "name":"IOWA",
     "nation":"United States of America",
     "type":"Battleship",
     "gun":"16-inch/50 caliber Mark 7(3 * 3)",
@@ -20,11 +20,11 @@
     "hp":"68100",
     "concealment": "16.2 kilometer",
     "torpedo": "None",
-    "tier":"IX"
+    "tier":"ix"
 
   },
   {
-    "name":"Ibuki",
+    "name":"IBUKI",
     "nation":"Empire of Japan",
     "type":"Cruiser",
     "gun":"203 mm/50 3rd Year Type mod.E(4 * 3)",
@@ -32,11 +32,11 @@
     "hp":"35100",
     "concealment": "12.6 kilometer",
     "torpedo": "610 mm Quintuple(4 * 4)",
-    "tier":"IX"
+    "tier":"ix"
 
   },
   {
-    "name":"Buffalo",
+    "name":"BUFFALO",
     "nation":"United States of America",
     "type":"Cruiser",
     "gun":"203 mm/55 Mk15(4 * 3)",
@@ -44,11 +44,11 @@
     "hp":"42500",
     "concealment": "13.62 kilometer",
     "torpedo": "None",
-    "tier":"IX"
+    "tier":"ix"
 
   },
   {
-    "name":"Seattle",
+    "name":"SEATTLE",
     "nation":"United States of America",
     "type":"Cruiser",
     "gun":"152 mm/47 E.P. Mk17(4 * 3)",
@@ -56,11 +56,11 @@
     "hp":"41800",
     "concealment": "12.24 kilometer",
     "torpedo": "None",
-    "tier":"IX"
+    "tier":"ix"
 
   },
   {
-    "name":"Fletcher",
+    "name":"FLETCHER",
     "nation":"United States of America",
     "type":"Destroyer",
     "gun":"127 mm/38 Mk30 mod.0(5 * 1)",
@@ -68,11 +68,11 @@
     "hp":"13900",
     "concealment": "7.38 kilometer",
     "torpedo": "533 mm Mk 15(2 * 5)",
-    "tier":"IX"
+    "tier":"ix"
 
   },
   {
-    "name":"Yugumo",
+    "name":"YUGUMO",
     "nation":"Empire of Japan",
     "type":"Destroyer",
     "gun":"127 mm/50 3rd Year Type(3 * 2)",
@@ -80,11 +80,11 @@
     "hp":"13900",
     "concealment": "7.02 kilometer",
     "torpedo": "610 mm Quintuple(2 * 4)",
-    "tier":"IX"
+    "tier":"ix"
 
   },
   {
-    "name":"Kitakaze",
+    "name":"KITAKAZE",
     "nation":"Empire of Japan",
     "type":"Destroyer",
     "gun":"100 mm/65 Type 98(4 * 2)",
@@ -92,7 +92,7 @@
     "hp":"16200",
     "concealment": "7.56 kilometer",
     "torpedo": "610 mm Sextuple(1 * 6)",
-    "tier":"IX"
+    "tier":"ix"
 
   }
 

@@ -18,6 +18,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.Menu;
 
@@ -72,7 +74,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_shipdd_sort) {
             return true;
         }
 
@@ -84,20 +86,25 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        Fragment fragment = null;
         if (id == R.id.nav_X) {
-            // Handle the camera action
-        } else if (id == R.id.nav_IX) {
+            fragment = new TierXFragment();
 
-        } else if (id == R.id.nav_VIII) {
 
-        } else if (id == R.id.nav_tools) {
 
-        } else if (id == R.id.nav_share) {
+       } else if (id == R.id.nav_IX) {
+            fragment = new TierIXFragment();
 
-        } else if (id == R.id.nav_send) {
+       } else if (id == R.id.nav_VIII) {
+            fragment = new TierXFragment();
+
+       // } else if (id == R.id.nav_send) {
 
         }
+       // else{id==R.id.nav_home}
+        FragmentManager fm = getSupportFragmentManager();
+        fm.beginTransaction()
+                .replace(R.id.constraintlayout_main_container,fragment).commit();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -1,5 +1,7 @@
 package com.example.wowsstats;
 
+import java.util.List;
+
 public class Ship {
 
 
@@ -84,6 +86,20 @@ public class Ship {
     public String concealment;
     public String torpedo;
     public String tier;
+
+    public List<Ship> ddSort(Ship[] ships){
+        List<Ship> sort;
+        sort = null;
+        for(int i = 0; i> ships.length; i++){
+            if(ships[i].getType() == "Destroyer"){
+                sort.add(ships[i]);
+
+            }
+
+
+        }
+        return sort;
+    }
 
 
 }
