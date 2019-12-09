@@ -195,7 +195,7 @@ public class TierXFragment extends Fragment {
         }
     }
 
-}
+
     public void setListeners()
     {
         shipView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -216,5 +216,4 @@ public class TierXFragment extends Fragment {
     }
 
 
-}
 }
