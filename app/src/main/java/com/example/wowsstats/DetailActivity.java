@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,7 +20,8 @@ public class DetailActivity extends AppCompatActivity
     private TextView speed;
     private TextView concealment;
     private TextView torpedo;
-
+    private String link;
+    public static final String EXTRA_URL = "url";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,12 +45,37 @@ public class DetailActivity extends AppCompatActivity
         speed.setText("Speed: " +ship.getSpeed());
         concealment.setText("Concealment: " + ship.getConcealment());
         torpedo.setText("Torpedo: " + ship.getTorpedo());
-
+        link = ship.getUrl();
+        setlisteners();
 
 
 
 
     }
+
+    private void setlisteners() {
+        image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Intent targetIntent = new Intent(getApplicationContext(), WebActivity.class);
+
+                targetIntent.putExtra(EXTRA_URL, link);
+
+                startActivity(targetIntent);
+
+
+
+            }
+        });
+    {
+
+
+
+        }
+    }
+
 
     public void wireWidgets()
     {

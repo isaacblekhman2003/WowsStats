@@ -91,6 +91,16 @@ public class Ship implements Parcelable {
     public String torpedo;
     public String tier;
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String url;
+
     public List<Ship> ddSort(Ship[] ships){
         List<Ship> sort;
         sort = null;
@@ -122,6 +132,7 @@ public class Ship implements Parcelable {
         dest.writeString(this.concealment);
         dest.writeString(this.torpedo);
         dest.writeString(this.tier);
+        dest.writeString(this.url);
     }
 
     public Ship() {
@@ -137,6 +148,7 @@ public class Ship implements Parcelable {
         this.concealment = in.readString();
         this.torpedo = in.readString();
         this.tier = in.readString();
+        this.url = in.readString();
     }
 
     public static final Parcelable.Creator<Ship> CREATOR = new Parcelable.Creator<Ship>() {

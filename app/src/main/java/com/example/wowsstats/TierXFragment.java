@@ -1,5 +1,6 @@
 package com.example.wowsstats;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -208,6 +209,7 @@ public class TierXFragment extends Fragment {
                 Intent targetIntent = new Intent(getContext(), DetailActivity.class);
 
                 targetIntent.putExtra(EXTRA_SHIP, ship);
+
 
                 startActivity(targetIntent);
 

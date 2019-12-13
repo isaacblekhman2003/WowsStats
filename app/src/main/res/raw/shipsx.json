@@ -8,7 +8,8 @@
     "hp":"97200",
     "concealment": "18 kilometer",
     "torpedo": "None",
-    "tier":"X"
+    "tier":"X",
+    "url": "https://sketchfab.com/3d-models/yamato-fbca35bd9e2b4eca85cbdcff6bcce4ef"
 
   },
   {
@@ -20,7 +21,8 @@
     "hp":"96300",
     "concealment": "17.82 kilometer",
     "torpedo": "None",
-    "tier":"X"
+    "tier":"X",
+    "url": "https://sketchfab.com/3d-models/montana-ad6a74eff39a4615946f2628f8aa3b96"
 
   },
   {
@@ -32,7 +34,8 @@
     "hp":"40800",
     "concealment": "12.6 kilometer",
     "torpedo": "610 mm Quintuple(4 * 5)",
-    "tier":"X"
+    "tier":"X",
+    "url": "https://sketchfab.com/3d-models/zao-3fac0c10b59a42adbfdfcf9ae4b2274a"
 
   },
   {
@@ -44,7 +47,8 @@
     "hp":"50600",
     "concealment": "13.86 kilometer",
     "torpedo": "None",
-    "tier":"X"
+    "tier":"X",
+    "url": "https://sketchfab.com/3d-models/des-moines-6616adcb515749f49fda8322d6a8e561"
 
   },
   {
@@ -56,7 +60,8 @@
     "hp":"45400",
     "concealment": "12.42 kilometer",
     "torpedo": "None",
-    "tier":"X"
+    "tier":"X",
+    "url": "https://sketchfab.com/3d-models/worcester-471322fafe854fcbb30290cb3eaa4a18"
 
   },
   {
@@ -68,7 +73,8 @@
     "hp":"19400",
     "concealment": "7.56 kilometer",
     "torpedo": "533 mm Mk 15(2 * 5)",
-    "tier":"X"
+    "tier":"X",
+    "url": "https://sketchfab.com/3d-models/gearing-7266af37fca3484cb5bb16a28144a056"
 
   },
   {
@@ -80,7 +86,8 @@
     "hp":"17900",
     "concealment": "7.11 kilometer",
     "torpedo": "610 mm Quintuple(3 * 5)",
-    "tier":"X"
+    "tier":"X",
+    "url": "https://sketchfab.com/3d-models/shimakaze-db0b385733e544cd831200879a45ae44"
 
   },
   {
@@ -92,7 +99,8 @@
     "hp":"25600",
     "concealment": "7.92 kilometer",
     "torpedo": "610 mm Sextuple(1 * 6)",
-    "tier":"X"
+    "tier":"X",
+    "url": "https://sketchfab.com/3d-models/harugumo-8e84f6eec1d3472bafecf08442f94398"
 
   }
 
