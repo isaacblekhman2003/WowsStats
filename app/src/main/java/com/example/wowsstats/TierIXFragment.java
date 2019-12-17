@@ -34,6 +34,7 @@ public class TierIXFragment extends Fragment {
     private Ship[] ships;
     private List<Ship> shipList;
     private ListView shipView;
+    List<Ship> sort;
 
     private static final String EXTRA_SHIP = "ship";
     @Nullable
@@ -80,7 +81,7 @@ public class TierIXFragment extends Fragment {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.action_shipdd_sort:
-                List<Ship> sort;
+
                 sort = new ArrayList<>();
                 for (int i = 0; i < ships.length; i++) {
                     if (ships[i].getType().equals("Destroyer")) {
@@ -95,15 +96,15 @@ public class TierIXFragment extends Fragment {
                 return true;
             case R.id.action_shipca_sort: {
 
-                List<Ship> sortca;
-                sortca = new ArrayList<>();
+
+                sort = new ArrayList<>();
                 for (int i = 0; i < ships.length; i++) {
                     if (ships[i].getType().equals("Cruiser")) {
-                        sortca.add(ships[i]);
+                        sort.add(ships[i]);
                     }
                 }
 
-                shipArrayAdapter = new ShipAdapter(sortca);
+                shipArrayAdapter = new ShipAdapter(sort);
                 shipView.setAdapter(shipArrayAdapter);
                 shipArrayAdapter.notifyDataSetChanged();
 
@@ -112,15 +113,15 @@ public class TierIXFragment extends Fragment {
             }
             case R.id.action_shipbb_sort: {
 
-                List<Ship> sortbb;
-                sortbb = new ArrayList<>();
+
+                sort = new ArrayList<>();
                 for (int i = 0; i < ships.length; i++) {
                     if (ships[i].getType().equals("Battleship")) {
-                        sortbb.add(ships[i]);
+                        sort.add(ships[i]);
                     }
                 }
 
-                shipArrayAdapter = new ShipAdapter(sortbb);
+                shipArrayAdapter = new ShipAdapter(sort);
                 shipView.setAdapter(shipArrayAdapter);
                 shipArrayAdapter.notifyDataSetChanged();
 
@@ -201,7 +202,13 @@ public class TierIXFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l)
             {
 
-                Ship ship = shipList.get(position);
+                Ship ship   = shipList.get(position);
+
+                if (sort != null) {
+                    ship =  sort.get(position);
+
+                }
+
 
                 Intent targetIntent = new Intent(getContext(), DetailActivity.class);
 
